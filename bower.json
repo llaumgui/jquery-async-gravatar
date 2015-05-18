@@ -1,0 +1,11 @@
+{
+  "name": "jquery-gravatar-lazyload",
+  "version": "0.0.1",
+  "main": "jquery-gravatar-lazyload.js",
+  "dependencies": {
+    "jquery": ">=1.11"
+  },
+  "ignore": [
+    ".editorconfig"
+  ]
+}

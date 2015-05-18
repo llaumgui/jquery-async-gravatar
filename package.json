@@ -1,0 +1,38 @@
+{
+  "name": "jquery-gravatar-lazyload",
+  "title": "jQuery Gravatar lazy load",
+  "description": "A lazy loading method for Gravatar images.",
+  "version": "0.0.1",
+  "main": "jquery-gravatar-lazyload.js",
+  "homepage": "https://github.com/llaumgui/jquery-gravatar-lazyload",
+  "author": {
+    "name": "Guillaume Kulakowski",
+    "url": "http://blog.kulakowski.fr/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/llaumgui/jquery-gravatar-lazyload.git"
+  },
+  "keywords": [
+    "jquery",
+    "gravatar",
+    "lazy",
+    "load",
+    "loading",
+    "lasyload",
+    "lasyloadng"
+  ],
+  "bugs": {
+    "url": "https://github.com/llaumgui/jquery-gravatar-lazyload/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/llaumgui/jquery-gravatar-lazyloadblob/master/LICENSE.txt"
+    }
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {}
+}
+
