@@ -1,21 +1,24 @@
 {
-  "name": "jquery-gravatar-lazyload",
-  "title": "jQuery Gravatar lazy load",
-  "description": "A lazy loading method for Gravatar images.",
+  "name": "jquery-async-gravatar",
+  "title": "jQuery async Gravatar",
+  "description": "An asynchronous loading method for Gravatar's images.",
   "version": "0.0.1",
-  "main": "jquery-gravatar-lazyload.js",
-  "homepage": "https://github.com/llaumgui/jquery-gravatar-lazyload",
+  "main": "jquery.async-gravatar.js",
+  "homepage": "https://github.com/llaumgui/jquery-async-gravatar",
   "author": {
     "name": "Guillaume Kulakowski",
     "url": "http://blog.kulakowski.fr/"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/llaumgui/jquery-gravatar-lazyload.git"
+    "url": "https://github.com/llaumgui/jquery-async-gravatar.git"
   },
   "keywords": [
     "jquery",
     "gravatar",
+    "gravatars",
+    "async",
+    "asynchronous",
     "lazy",
     "load",
     "loading",
@@ -23,12 +26,12 @@
     "lasyloadng"
   ],
   "bugs": {
-    "url": "https://github.com/llaumgui/jquery-gravatar-lazyload/issues"
+    "url": "https://github.com/llaumgui/jquery-async-gravatar/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/llaumgui/jquery-gravatar-lazyloadblob/master/LICENSE.txt"
+      "url": "https://github.com/llaumgui/jquery-async-gravatar/blob/master/LICENSE.txt"
     }
   ],
   "dependencies": {},

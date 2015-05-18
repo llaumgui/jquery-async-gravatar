@@ -1,7 +1,7 @@
 {
-  "name": "jquery-gravatar-lazyload",
+  "name": "jquery-async-gravatar",
   "version": "0.0.1",
-  "main": "jquery-gravatar-lazyload.js",
+  "main": "jquery.async-gravatar.js",
   "dependencies": {
     "jquery": ">=1.11"
   },

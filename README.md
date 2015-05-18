@@ -1,2 +1,5 @@
-# jquery-gravatar-lazyload
-A lazy loading method for Gravatar images.
+# jQuery async Gravatar
+An asynchronous loading method for Gravatar's images.
+
+## Installation
+TODO
