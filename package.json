@@ -40,6 +40,8 @@
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-jshint": "latest"
   },
-  "scripts": {}
+  "scripts": {
+    "test": "grunt travis"
+  }
 }
 

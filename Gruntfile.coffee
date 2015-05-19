@@ -63,6 +63,6 @@ module.exports = (grunt) ->
     'uglify'
   ]
 
-  grunt.registerTask 'default', [
-    'build'
-  ]
+  # Alias
+  grunt.registerTask 'default', 'build'
+  grunt.registerTask 'travis', 'lint'
