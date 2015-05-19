@@ -3,6 +3,7 @@ module.exports = (grunt) ->
 # =============================== Load plugins =============================== #
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-jshint'
+  grunt.loadNpmTasks 'grunt-travis-lint'
 
 
 
@@ -56,6 +57,7 @@ module.exports = (grunt) ->
 # ============================== Callable tasks ============================== #
   grunt.registerTask 'lint', [
     'jshint'
+    'travis-lint'
   ]
 
   grunt.registerTask 'build', [

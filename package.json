@@ -38,7 +38,8 @@
   "devDependencies": {
     "grunt": "latest",
     "grunt-contrib-uglify": "latest",
-    "grunt-contrib-jshint": "latest"
+    "grunt-contrib-jshint": "latest",
+    "grunt-travis-lint": "latest"
   },
   "scripts": {
     "test": "grunt travis"
