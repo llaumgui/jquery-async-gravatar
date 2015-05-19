@@ -7,6 +7,8 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-jsonlint'
   grunt.loadNpmTasks 'grunt-coffeelint'
   grunt.loadNpmTasks 'grunt-mdlint'
+  grunt.loadNpmTasks 'grunt-contrib-connect'
+  grunt.loadNpmTasks 'grunt-contrib-qunit'
   grunt.loadNpmTasks 'grunt-contrib-compress'
 
 
@@ -76,6 +78,22 @@ module.exports = (grunt) ->
         configFile: '.coffeelintrc'
 
 
+    # QUnit test
+    # ----------
+    qunit:
+      default:
+        options:
+          urls: [
+            'http://localhost:<%= connect.server.options.port %>/test/index.html'
+          ]
+    connect:
+      server:
+        options:
+          port: 8000
+          base: '.'
+          debug: true
+
+
     # MarkDown lint
     # -------------
     mdlint:
@@ -114,6 +132,8 @@ module.exports = (grunt) ->
     'coffeelint'
     'mdlint'
     'jshint'
+    'connect'
+    'qunit'
   ]
 
   grunt.registerTask 'build', [
