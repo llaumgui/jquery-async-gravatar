@@ -8,10 +8,10 @@ An asynchronous loading method for Gravatar's images.
 ## Installation
 ### bower
 
-Via [Bower](http://bower.io/search/?q=jquery):
+Via [Bower](http://bower.io):
 
 ```
-bower install llaumgui/jquery-async-gravatar
+bower install jquery-async-gravatar
 ```
 
 Or, add `jquery-async-gravatar` to your app's `bower.json`.
@@ -19,8 +19,7 @@ Or, add `jquery-async-gravatar` to your app's `bower.json`.
 ```json
   ...
     "dependencies": {
-      ...
-      "jquery-async-gravatar": "llaumgui/jquery-async-gravatar"
+      "jquery-async-gravatar": "latest"
     },
   ...
 ```
