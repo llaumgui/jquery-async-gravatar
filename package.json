@@ -2,7 +2,7 @@
   "name": "jquery-async-gravatar",
   "title": "jQuery async Gravatar",
   "description": "An asynchronous loading method for Gravatar's images.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "jquery.async-gravatar.js",
   "homepage": "https://github.com/llaumgui/jquery-async-gravatar",
   "author": {
@@ -43,7 +43,9 @@
     "grunt-jsonlint": "latest",
     "grunt-coffeelint": "latest",
     "grunt-mdlint": "latest",
-    "grunt-contrib-compress": "latest"
+    "grunt-contrib-compress": "latest",
+    "jquery": "^1.11",
+    "qunitjs": "^1.18"
   },
   "scripts": {
     "test": "grunt travis --verbose"
