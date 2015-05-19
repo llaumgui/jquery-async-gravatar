@@ -10,40 +10,40 @@ An asynchronous loading method for Gravatar's images.
 
 Via [Bower](http://bower.io):
 
-```
+~~~
 bower install jquery-async-gravatar
-```
+~~~
 
 Or, add `jquery-async-gravatar` to your app's `bower.json`.
 
-```json
+~~~json
   ...
     "dependencies": {
       "jquery-async-gravatar": "latest"
     },
   ...
-```
+~~~
 
 ### Standalone
 Include script *after* the jQuery library (unless you are packaging scripts somehow else):
 
-```html
+~~~html
 <script src="/path/to/jquery.async-gravatar.js"></script>
-```
+~~~
 
 **Do not include the script directly from GitHub.** The file is being served as text/plain and as such being blocked
 in Internet Explorer on Windows 7 for instance (because of the wrong MIME type). Bottom line: **GitHub is not a CDN**.
 
 ## Usage
 * Add an default image to your HTML with data-gravatar_hash attribut:
-```html
+~~~html
 <img alt="Gravatar" src="./img/default_gravatar.png" data-gravatar_hash="HASH" class="gravatar" />
-```
+~~~
 * Select all image and load asynchronous the Gravatar :
 
-```javascript
+~~~javascript
 $(".gravatar").asyncGravatar({});
-```
+~~~
 
 ### Options
 | Option        | Description   | Default value |
@@ -57,13 +57,13 @@ For more explication see [official documentation](https://gravatar.com/site/impl
 
 ### Data attributes
 You can also use [data attributes](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_data_attributes) on each images:
-```html
+~~~html
 <img alt="Gravatar" src="./img/default_gravatar.png" class="gravatar"
      data-gravatar_hash="HASH"
      data-gravatar_size="SIZE"
      data-gravatar_default="DEFAULT_IMG"
      data-gravatar_rating="RATING" />
-```
+~~~
 
 ## License
 Released under the [MIT license](http://www.opensource.org/licenses/MIT).
