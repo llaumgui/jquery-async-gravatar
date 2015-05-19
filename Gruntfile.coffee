@@ -4,6 +4,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-jshint'
   grunt.loadNpmTasks 'grunt-travis-lint'
+  grunt.loadNpmTasks 'grunt-contrib-compress'
 
 
 
@@ -53,6 +54,26 @@ module.exports = (grunt) ->
           src: [ '<%= src.input.js %>' ]
 
 
+    # Compress
+    # --------
+    compress:
+      main:
+        options:
+          archive: "<%= pkg.name %>-v<%= pkg.version %>.tar.gz"
+        files : [
+          {
+            expand: true
+            src : [
+              'jquery.async-gravatar.js'
+              'jquery.async-gravatar.min.js'
+              'LICENSE.txt'
+              'README.md'
+            ]
+            cwd : "./"
+          }
+        ]
+
+
 
 # ============================== Callable tasks ============================== #
   grunt.registerTask 'lint', [
@@ -63,6 +84,11 @@ module.exports = (grunt) ->
   grunt.registerTask 'build', [
     'lint'
     'uglify'
+  ]
+
+  grunt.registerTask 'release', [
+    'build'
+    'compress'
   ]
 
   # Alias

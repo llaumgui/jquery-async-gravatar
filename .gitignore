@@ -1,4 +1,5 @@
 jquery.async-gravatar.min.js
+jquery-async-gravatar-v*.tar.gz
 
 # Created by https://www.gitignore.io
 ### Bower ###
@@ -6,7 +7,6 @@ bower_components
 .bower-cache
 .bower-registry
 .bower-tmp
-
 
 ### NetBeans ###
 nbproject/private/

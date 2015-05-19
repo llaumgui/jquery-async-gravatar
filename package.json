@@ -39,7 +39,8 @@
     "grunt": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-jshint": "latest",
-    "grunt-travis-lint": "latest"
+    "grunt-travis-lint": "latest",
+    "grunt-contrib-compress": "latest"
   },
   "scripts": {
     "test": "grunt travis --verbose"
