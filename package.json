@@ -42,6 +42,7 @@
     "grunt-travis-lint": "latest",
     "grunt-jsonlint": "latest",
     "grunt-coffeelint": "latest",
+    "grunt-mdlint": "latest",
     "grunt-contrib-compress": "latest"
   },
   "scripts": {

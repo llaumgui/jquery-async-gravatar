@@ -6,6 +6,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-travis-lint'
   grunt.loadNpmTasks 'grunt-jsonlint'
   grunt.loadNpmTasks 'grunt-coffeelint'
+  grunt.loadNpmTasks 'grunt-mdlint'
   grunt.loadNpmTasks 'grunt-contrib-compress'
 
 
@@ -75,6 +76,14 @@ module.exports = (grunt) ->
         configFile: '.coffeelintrc'
 
 
+    # MarkDown lint
+    # -------------
+    mdlint:
+      default: [
+        '*.md'
+      ]
+
+
     # Compress
     # --------
     compress:
@@ -101,6 +110,7 @@ module.exports = (grunt) ->
     'jsonlint'
     'travis-lint'
     'coffeelint'
+    'mdlint'
     'jshint'
   ]
 
