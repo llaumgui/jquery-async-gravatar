@@ -6,6 +6,8 @@
     "jquery": ">=1.11"
   },
   "ignore": [
-    ".editorconfig"
+    ".editorconfig",
+    ".gitignore",
+    ".travis.yml"
   ]
 }

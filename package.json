@@ -35,7 +35,11 @@
     }
   ],
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-jshint": "latest"
+  },
   "scripts": {}
 }
 

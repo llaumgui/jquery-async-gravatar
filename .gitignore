@@ -1,5 +1,6 @@
-# Created by https://www.gitignore.io
+jquery.async-gravatar.min.js
 
+# Created by https://www.gitignore.io
 ### Bower ###
 bower_components
 .bower-cache
@@ -9,4 +10,12 @@ bower_components
 
 ### NetBeans ###
 nbproject/private/
-npm-debug.log
+
+### Node ###
+# Logs
+logs
+*.log
+
+# Dependency directory
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+node_modules
