@@ -12,13 +12,14 @@
     /**
      * Gravatar object
      */
-    $.gravatar = function () {};
-    $.extend($.gravatar, {
+    $.gravatar = {
+        options: {},
+
         // Default options.
-        options : {
+        default_options : {
             size : 64,
             default_img: "mm",
-            force_secure: false,
+            force_https: false,
             rating: "g",
             attr: {
                 hash: "data-gravatar_hash",
@@ -29,15 +30,20 @@
         },
 
         // HTTP & HTTPS URLs.
-        url: {
+        urls: {
             http: "http://www.gravatar.com/avatar",
-            htps: "https://secure.gravatar.com"
+            https: "https://secure.gravatar.com"
         },
+    };
 
+    $.extend($.gravatar, {
         /**
          * Init
          */
         init: function (arg) {
+            // Reset options for multiple call.
+            $.gravatar.reset();
+
             // Extends Gravatar with arguments.
             if (arg) {
                 $.extend($.gravatar.options, arg);
@@ -45,10 +51,18 @@
 
             // Check protocol.
             if ($.gravatar.options.force_https === true || "https:" === document.location.protocol) {
-                $.gravatar.url = $.gravatar.url.https;
+                $.gravatar.url = $.gravatar.urls.https;
             } else {
-                $.gravatar.url = $.gravatar.url.http;
+                $.gravatar.url = $.gravatar.urls.http;
             }
+        },
+
+        /**
+         * Reset to use multiple calls
+         */
+        reset: function () {
+            // Reset options for multiple call.
+            $.extend($.gravatar.options, $.gravatar.default_options);
         },
     });
 
@@ -57,6 +71,7 @@
     * asyncGravatar jQuery plugin.
     */
     $.fn.asyncGravatar = function (arg) {
+        // Init.
         $.gravatar.init(arg);
 
         this.each(function () {
