@@ -5,6 +5,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-jshint'
   grunt.loadNpmTasks 'grunt-travis-lint'
   grunt.loadNpmTasks 'grunt-jsonlint'
+  grunt.loadNpmTasks 'grunt-coffeelint'
   grunt.loadNpmTasks 'grunt-contrib-compress'
 
 
@@ -22,15 +23,14 @@ module.exports = (grunt) ->
 
 
     # Sources configuration
-    # ---------------------
     src:
       output: 'jquery.async-gravatar.min.js'
       input: 'jquery.async-gravatar.js'
 
-
-
-# ================================== Banner ================================== #
+    # Banner
     banner: '/*! <%= pkg.title %> v<%= pkg.version %> | (c) 2015 <%= pkg.author.name %>. | MIT license */\n'
+
+
 
 # =================================== Task =================================== #
 
@@ -54,14 +54,25 @@ module.exports = (grunt) ->
         files:
           src: [ '<%= src.input.js %>' ]
 
-    # JSONLint
+    # JSON Lint
     # --------
     jsonlint:
       default:
         src: [
           "*.json"
+          ".coffeelintrc"
           ".jshintrc"
         ]
+
+
+    # Coffee Lint
+    # -----------
+    coffeelint:
+      default: [
+        '*.coffee'
+      ]
+      options:
+        configFile: '.coffeelintrc'
 
 
     # Compress
@@ -87,9 +98,10 @@ module.exports = (grunt) ->
 
 # ============================== Callable tasks ============================== #
   grunt.registerTask 'lint', [
-    'jshint'
     'jsonlint'
     'travis-lint'
+    'coffeelint'
+    'jshint'
   ]
 
   grunt.registerTask 'build', [

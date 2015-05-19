@@ -40,8 +40,9 @@
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-jshint": "latest",
     "grunt-travis-lint": "latest",
-    "grunt-contrib-compress": "latest",
-    "grunt-jsonlint": "latest"
+    "grunt-jsonlint": "latest",
+    "grunt-coffeelint": "latest",
+    "grunt-contrib-compress": "latest"
   },
   "scripts": {
     "test": "grunt travis --verbose"
