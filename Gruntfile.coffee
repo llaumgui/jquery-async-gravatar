@@ -25,8 +25,8 @@ module.exports = (grunt) ->
 
     # Sources configuration
     src:
-      output: 'jquery.async-gravatar.min.js'
-      input: 'jquery.async-gravatar.js'
+      output: 'src/jquery.async-gravatar.min.js'
+      input: 'src/jquery.async-gravatar.js'
 
     # Banner
     banner: '/*! <%= pkg.title %> v<%= pkg.version %> | (c) 2015 <%= pkg.author.name %>. | MIT license */\n'
@@ -89,17 +89,19 @@ module.exports = (grunt) ->
     compress:
       main:
         options:
-          archive: "<%= pkg.name %>-v<%= pkg.version %>.tar.gz"
+          archive: "build/<%= pkg.name %>-v<%= pkg.version %>.tar.gz"
         files : [
           {
             expand: true
             src : [
-              'jquery.async-gravatar.js'
-              'jquery.async-gravatar.min.js'
+              '<%= src.output %>'
+              '<%= src.input.js %>'
               'LICENSE.txt'
               'README.md'
             ]
-            cwd : "./"
+            flatten: true
+            cwd: './'
+            dest: '<%= pkg.name %>-v<%= pkg.version %>/'
           }
         ]
 
