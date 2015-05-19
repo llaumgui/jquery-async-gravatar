@@ -4,6 +4,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-jshint'
   grunt.loadNpmTasks 'grunt-travis-lint'
+  grunt.loadNpmTasks 'grunt-jsonlint'
   grunt.loadNpmTasks 'grunt-contrib-compress'
 
 
@@ -53,6 +54,15 @@ module.exports = (grunt) ->
         files:
           src: [ '<%= src.input.js %>' ]
 
+    # JSONLint
+    # --------
+    jsonlint:
+      default:
+        src: [
+          "*.json"
+          ".jshintrc"
+        ]
+
 
     # Compress
     # --------
@@ -78,6 +88,7 @@ module.exports = (grunt) ->
 # ============================== Callable tasks ============================== #
   grunt.registerTask 'lint', [
     'jshint'
+    'jsonlint'
     'travis-lint'
   ]
 
