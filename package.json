@@ -42,7 +42,7 @@
     "grunt-travis-lint": "latest"
   },
   "scripts": {
-    "test": "grunt travis"
+    "test": "grunt travis --verbose"
   }
 }
 
