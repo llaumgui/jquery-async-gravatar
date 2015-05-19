@@ -126,18 +126,28 @@ module.exports = (grunt) ->
 
 
 # ============================== Callable tasks ============================== #
+  grunt.registerTask 'travis', [
+    'lint'
+    'unit_tests'
+  ]
+
   grunt.registerTask 'lint', [
     'jsonlint'
     'travis-lint'
     'coffeelint'
     'mdlint'
     'jshint'
+  ]
+
+  grunt.registerTask 'unit_tests', [
+    'uglify'
     'connect'
     'qunit'
   ]
 
   grunt.registerTask 'build', [
     'lint'
+    'unit_tests'
     'uglify'
   ]
 
@@ -148,4 +158,3 @@ module.exports = (grunt) ->
 
   # Alias
   grunt.registerTask 'default', 'build'
-  grunt.registerTask 'travis', 'lint'

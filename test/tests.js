@@ -17,7 +17,7 @@ QUnit.test( "Tests with defaults options values", function( assert ) {
     "use strict";
 
     // Create img object.
-    var fixture = $("<img id=\"test-1\" alt=\"Gravatar\" src=\"__TO_CHANGE__\" data-gravatar_hash=\"" + $hash + "\"  />");
+    var fixture = $("<img id=\"test-1\" alt=\"Gravatar\" src=\"./default.jpg\" data-gravatar_hash=\"" + $hash + "\"  />");
     fixture.append("#qunit-fixture");
 
     // Run asyncGravatar.
@@ -29,7 +29,7 @@ QUnit.test( "Tests with defaults options values", function( assert ) {
 
     assert.notEqual(
         $src,
-        "__TO_CHANGE__",
+        "./default.jpg",
         "Test that the image attribute src is changed."
     );
     assert.equal(
@@ -59,7 +59,7 @@ QUnit.test( "Tests with customs options values", function( assert ) {
     "use strict";
 
     // Create img object.
-    var fixture = $("<img id=\"test-2\" alt=\"Gravatar\" src=\"__TO_CHANGE__\" data-gravatar_hash=\"" + $hash + "\"  />");
+    var fixture = $("<img id=\"test-2\" alt=\"Gravatar\" src=\"./default.jpg\" data-gravatar_hash=\"" + $hash + "\"  />");
     fixture.append("#qunit-fixture");
 
     // Run asyncGravatar.
@@ -76,7 +76,7 @@ QUnit.test( "Tests with customs options values", function( assert ) {
 
     assert.notEqual(
         $src,
-        "__TO_CHANGE__",
+        "./default.jpg",
         "Test that the image attribute src is changed."
     );
     assert.equal(
@@ -106,7 +106,7 @@ QUnit.test( "Tests with data attributes", function( assert ) {
     "use strict";
 
     // Create img object.
-    var fixture = $("<img id=\"test-3\" alt=\"Gravatar\" src=\"__TO_CHANGE__\" data-gravatar_hash=\"" + $hash + "\" data-gravatar_size=\"50\" data-gravatar_default=\"404\" data-gravatar_rating=\"x\"  />");
+    var fixture = $("<img id=\"test-3\" alt=\"Gravatar\" src=\"./default.jpg\" data-gravatar_hash=\"" + $hash + "\" data-gravatar_size=\"50\" data-gravatar_default=\"404\" data-gravatar_rating=\"x\"  />");
     fixture.append("#qunit-fixture");
 
     // Run asyncGravatar.
@@ -118,7 +118,7 @@ QUnit.test( "Tests with data attributes", function( assert ) {
 
     assert.notEqual(
         $src,
-        "__TO_CHANGE__",
+        "./default.jpg",
         "Test that the image attribute src is changed."
     );
     assert.equal(
