@@ -15,6 +15,10 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
+[.jscsrc]
+indent_style = space
+indent_size = 2
+
 [.jshintrc]
 indent_style = space
 indent_size = 2

@@ -1,12 +1,12 @@
 /*!
-* jQuery async Gravatar
-* https://github.com/llaumgui/jquery-async-gravatar
-*
-* Copyright 2015 Guillaume Kulakowski and other contributors
-* Released under the MIT license
-* https://raw.githubusercontent.com/llaumgui/jquery-async-gravatar/master/LICENSE.txt
-*/
-(function ($) {
+ * jQuery async Gravatar
+ * https://github.com/llaumgui/jquery-async-gravatar
+ *
+ * Copyright 2015 Guillaume Kulakowski and other contributors
+ * Released under the MIT license
+ * https://raw.githubusercontent.com/llaumgui/jquery-async-gravatar/master/LICENSE.txt
+ */
+( function( $ ) {
     "use strict";
 
     /**
@@ -16,8 +16,8 @@
         options: {},
 
         // Default options.
-        default_options : {
-            size : 64,
+        default_options: {
+            size: 64,
             default_img: "mm",
             force_https: false,
             rating: "g",
@@ -33,24 +33,25 @@
         urls: {
             http: "http://www.gravatar.com/avatar",
             https: "https://secure.gravatar.com"
-        },
+        }
     };
 
-    $.extend($.gravatar, {
+    $.extend( $.gravatar, {
         /**
          * Init
          */
-        init: function (arg) {
+        init: function( arg ) {
+
             // Reset options for multiple call.
             $.gravatar.reset();
 
             // Extends Gravatar with arguments.
-            if (arg) {
-                $.extend($.gravatar.options, arg);
+            if ( arg ) {
+                $.extend( $.gravatar.options, arg );
             }
 
             // Check protocol.
-            if ($.gravatar.options.force_https === true || "https:" === document.location.protocol) {
+            if ( $.gravatar.options.force_https === true || "https:" === document.location.protocol ) {
                 $.gravatar.url = $.gravatar.urls.https;
             } else {
                 $.gravatar.url = $.gravatar.urls.http;
@@ -60,34 +61,36 @@
         /**
          * Reset to use multiple calls
          */
-        reset: function () {
-            // Reset options for multiple call.
-            $.extend($.gravatar.options, $.gravatar.default_options);
-        },
-    });
+        reset: function() {
 
+            // Reset options for multiple call.
+            $.extend( $.gravatar.options, $.gravatar.default_options );
+        }
+    } );
 
     /**
-    * asyncGravatar jQuery plugin.
-    */
-    $.fn.asyncGravatar = function (arg) {
+     * asyncGravatar jQuery plugin.
+     */
+    $.fn.asyncGravatar = function( arg )  {
+
         // Init.
-        $.gravatar.init(arg);
+        $.gravatar.init( arg );
 
-        this.each(function () {
-            if ($(this).attr($.gravatar.options.attr.hash)) {
-                var hash = $(this).attr($.gravatar.options.attr.hash),
+        this.each( function() {
+            if ( $( this ).attr( $.gravatar.options.attr.hash ) ) {
+                var hash = $( this ).attr( $.gravatar.options.attr.hash ),
+
                     // Allow to override with data attributs ("data-").
-                    size = ($(this).attr($.gravatar.options.attr.size) ? $(this).attr($.gravatar.options.attr.size) : $.gravatar.options.size),
-                    rating = ($(this).attr($.gravatar.options.attr.rating) ? $(this).attr($.gravatar.options.attr.rating) : $.gravatar.options.rating),
-                    default_img = ($(this).attr($.gravatar.options.attr.default) ? $(this).attr($.gravatar.options.attr.default) : $.gravatar.options.default_img),
-                    src = $.gravatar.url + "/" + encodeURIComponent(hash) +
-                    "?s=" + encodeURIComponent(size) +
-                    "&r=" + encodeURIComponent(rating) +
-                    "&d=" + encodeURIComponent(default_img);
+                    size = ( $( this ).attr( $.gravatar.options.attr.size ) ? $( this ).attr( $.gravatar.options.attr.size ) : $.gravatar.options.size ),
+                    rating = ( $( this ).attr( $.gravatar.options.attr.rating ) ? $( this ).attr( $.gravatar.options.attr.rating ) : $.gravatar.options.rating ),
+                    default_img = ( $( this ).attr( $.gravatar.options.attr.default ) ? $( this ).attr( $.gravatar.options.attr.default ) : $.gravatar.options.default_img ),
+                    src = $.gravatar.url + "/" + encodeURIComponent( hash ) +
+                    "?s=" + encodeURIComponent( size ) +
+                    "&r=" + encodeURIComponent( rating ) +
+                    "&d=" + encodeURIComponent( default_img );
 
-                $(this).attr("src", src);
+                $( this ).attr( "src", src );
             }
-        });
+        } );
     };
-}(jQuery));
+}( jQuery ) );

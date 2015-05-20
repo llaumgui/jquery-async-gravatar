@@ -2,14 +2,15 @@ module.exports = (grunt) ->
 
 # =============================== Load plugins =============================== #
   grunt.loadNpmTasks 'grunt-contrib-uglify'
+  grunt.loadNpmTasks 'grunt-contrib-compress'
   grunt.loadNpmTasks 'grunt-contrib-jshint'
+  grunt.loadNpmTasks 'grunt-jscs'
   grunt.loadNpmTasks 'grunt-travis-lint'
   grunt.loadNpmTasks 'grunt-jsonlint'
   grunt.loadNpmTasks 'grunt-coffeelint'
   grunt.loadNpmTasks 'grunt-mdlint'
   grunt.loadNpmTasks 'grunt-contrib-connect'
   grunt.loadNpmTasks 'grunt-contrib-qunit'
-  grunt.loadNpmTasks 'grunt-contrib-compress'
 
 
 
@@ -22,8 +23,8 @@ module.exports = (grunt) ->
   # =====================
   grunt.initConfig
 
+    # Load external configurations
     pkg: grunt.file.readJSON 'package.json'
-
 
     # Sources configuration
     src:
@@ -37,8 +38,10 @@ module.exports = (grunt) ->
 
 # =================================== Task =================================== #
 
-    # Uglify the JS file
-    # ------------------
+    # Packaging
+    # ---------
+
+    # Uglify
     uglify:
       default:
         options:
@@ -47,63 +50,7 @@ module.exports = (grunt) ->
         files:
           '<%= src.output %>': '<%= src.input.js %>'
 
-
-    # JSHint
-    # ------
-    jshint:
-      default:
-        options:
-          jshintrc: true
-        files:
-          src: [ '<%= src.input.js %>' ]
-
-    # JSON Lint
-    # --------
-    jsonlint:
-      default:
-        src: [
-          "*.json"
-          ".coffeelintrc"
-          ".jshintrc"
-        ]
-
-
-    # Coffee Lint
-    # -----------
-    coffeelint:
-      default: [
-        '*.coffee'
-      ]
-      options:
-        configFile: '.coffeelintrc'
-
-
-    # QUnit test
-    # ----------
-    qunit:
-      default:
-        options:
-          urls: [
-            'http://localhost:<%= connect.server.options.port %>/test/index.html'
-          ]
-    connect:
-      server:
-        options:
-          port: 8000
-          base: '.'
-          debug: true
-
-
-    # MarkDown lint
-    # -------------
-    mdlint:
-      default: [
-        '*.md'
-      ]
-
-
     # Compress
-    # --------
     compress:
       main:
         options:
@@ -124,6 +71,74 @@ module.exports = (grunt) ->
         ]
 
 
+    # Linters
+    # ------
+
+    # JS
+    jshint:
+      default:
+        options:
+          jshintrc: true
+        files:
+          src: [
+            '<%= src.input.js %>'
+            "test/*.js"
+          ]
+
+    # JS Code Sniffer
+    jscs:
+      src: [
+        '<%= src.input.js %>'
+        "test/*.js"
+      ]
+      options:
+        config: ".jscsrc"
+
+    # JSON
+    jsonlint:
+      default:
+        src: [
+          "*.json"
+          ".coffeelintrc"
+          ".jscsrc"
+          ".jshintrc"
+        ]
+
+    # Coffee
+    coffeelint:
+      default: [
+        '*.coffee'
+      ]
+      options:
+        configFile: '.coffeelintrc'
+
+    # MarkDown
+    mdlint:
+      default: [
+        '*.md'
+      ]
+
+
+    # Unit tests
+    # ----------
+
+    # QUnit
+    qunit:
+      default:
+        options:
+          urls: [
+            'http://localhost:<%= connect.server.options.port %>/test/index.html'
+          ]
+
+    # Conect
+    connect:
+      server:
+        options:
+          port: 8000
+          base: '.'
+          debug: true
+
+
 
 # ============================== Callable tasks ============================== #
   grunt.registerTask 'travis', [
@@ -136,6 +151,7 @@ module.exports = (grunt) ->
     'travis-lint'
     'coffeelint'
     'mdlint'
+    'jscs'
     'jshint'
   ]
 
