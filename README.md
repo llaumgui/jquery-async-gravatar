@@ -1,5 +1,5 @@
 # jQuery async Gravatar
-[![Build Status branch master](https://travis-ci.org/llaumgui/jquery-async-gravatar.svg?branch=master)](https://travis-ci.org/llaumgui/jquery-async-gravatar) [![Code Climate](https://codeclimate.com/github/llaumgui/jquery-async-gravatar/badges/gpa.svg)](https://codeclimate.com/github/llaumgui/jquery-async-gravatar) [![devDependency Status](https://david-dm.org/llaumgui/jquery-async-gravatar/dev-status.png)](https://david-dm.org/llaumgui/jquery-async-gravatar#info=devDependencies)
+[![Build Status branch master](https://travis-ci.org/llaumgui/jquery-async-gravatar.svg?branch=master)](https://travis-ci.org/llaumgui/jquery-async-gravatar) [![Code Climate](https://codeclimate.com/github/llaumgui/jquery-async-gravatar/badges/gpa.svg)](https://codeclimate.com/github/llaumgui/jquery-async-gravatar) [![Test Coverage](https://codeclimate.com/github/llaumgui/jquery-async-gravatar/badges/coverage.svg)](https://codeclimate.com/github/llaumgui/jquery-async-gravatar/coverage) [![devDependency Status](https://david-dm.org/llaumgui/jquery-async-gravatar/dev-status.png)](https://david-dm.org/llaumgui/jquery-async-gravatar#info=devDependencies)
 
 An asynchronous loading method for Gravatar's images.
 
