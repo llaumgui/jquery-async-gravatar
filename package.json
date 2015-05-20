@@ -37,15 +37,19 @@
   "dependencies": {},
   "devDependencies": {
     "grunt": "latest",
+
     "grunt-contrib-uglify": "latest",
+    "grunt-contrib-compress": "latest",
+
     "grunt-contrib-jshint": "latest",
     "grunt-travis-lint": "latest",
     "grunt-jsonlint": "latest",
     "grunt-coffeelint": "latest",
     "grunt-mdlint": "latest",
-    "grunt-contrib-compress": "latest",
+
     "grunt-contrib-connect": "latest",
     "grunt-contrib-qunit": "latest",
+
     "jquery": "^1.11",
     "qunitjs": "^1.18"
   },
