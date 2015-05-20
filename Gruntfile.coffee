@@ -9,8 +9,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-jsonlint'
   grunt.loadNpmTasks 'grunt-coffeelint'
   grunt.loadNpmTasks 'grunt-mdlint'
-  grunt.loadNpmTasks 'grunt-contrib-connect'
-  grunt.loadNpmTasks 'grunt-contrib-qunit'
+  grunt.loadNpmTasks 'grunt-qunit-istanbul'
 
 
 
@@ -48,7 +47,7 @@ module.exports = (grunt) ->
           report: 'gzip'
           banner: '<%= banner %>'
         files:
-          '<%= src.output %>': '<%= src.input.js %>'
+          '<%= src.output %>': '<%= src.input %>'
 
     # Compress
     compress:
@@ -60,7 +59,7 @@ module.exports = (grunt) ->
             expand: true
             src : [
               '<%= src.output %>'
-              '<%= src.input.js %>'
+              '<%= src.input %>'
               'LICENSE.txt'
               'README.md'
             ]
@@ -81,14 +80,14 @@ module.exports = (grunt) ->
           jshintrc: true
         files:
           src: [
-            '<%= src.input.js %>'
+            '<%= src.input %>'
             "test/*.js"
           ]
 
     # JS Code Sniffer
     jscs:
       src: [
-        '<%= src.input.js %>'
+        '<%= src.input %>'
         "test/*.js"
       ]
       options:
@@ -121,22 +120,16 @@ module.exports = (grunt) ->
 
     # Unit tests
     # ----------
-
-    # QUnit
     qunit:
-      default:
-        options:
-          urls: [
-            'http://localhost:<%= connect.server.options.port %>/test/index.html'
-          ]
-
-    # Conect
-    connect:
-      server:
-        options:
-          port: 8000
-          base: '.'
-          debug: true
+      options:
+        timeout: 30000,
+        "--web-security": "no",
+        coverage:
+          src: '<%= src.input %>'
+          instrumentedFiles: "temp/"
+          lcovReport: "build"
+          linesThresholdPct: 70
+      all: ['test/*.html']
 
 
 
@@ -156,8 +149,6 @@ module.exports = (grunt) ->
   ]
 
   grunt.registerTask 'unit_tests', [
-    'uglify'
-    'connect'
     'qunit'
   ]
 

@@ -5,3 +5,6 @@ node_js:
 before_install: npm install -g grunt-cli
 
 sudo: false
+
+after_script:
+  - codeclimate < build/lcov.info
