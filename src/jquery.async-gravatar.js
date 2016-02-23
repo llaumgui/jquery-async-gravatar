@@ -69,7 +69,7 @@
     } );
 
     /**
-     * asyncGravatar jQuery plugin.
+     * The asyncGravatar jQuery plugin.
      */
     $.fn.asyncGravatar = function( arg )  {
 

@@ -5,8 +5,8 @@
  */
 $.urlParam = function( url, param ) {
     "use strict";
-    var results = new RegExp( "[\?&]" + param + "=([^&#]*)" ).exec( url ) ;
-    return results[1] || 0;
+    var results = new RegExp( "[\?&]" + param + "=([^&#]*)" ).exec( url );
+    return results[ 1 ] || 0;
 };
 
 // Hash to test.
