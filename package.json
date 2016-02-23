@@ -50,7 +50,7 @@
 
     "grunt-qunit-istanbul": "latest",
 
-    "jquery": "^1.11",
+    "jquery": "^1.12",
     "qunitjs": "^1.18"
   },
   "scripts": {
