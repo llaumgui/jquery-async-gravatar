@@ -79,7 +79,7 @@ QUnit.test( "Tests with customs options values", function( assert ) {
     );
     assert.equal(
         $url,
-        "https://secure.gravatar.com/" + $hash,
+        "https://secure.gravatar.com/avatar/" + $hash,
         "Test the image attribute src url."
     );
     assert.equal(
