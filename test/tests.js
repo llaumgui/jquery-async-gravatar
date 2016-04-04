@@ -5,8 +5,8 @@
  */
 $.urlParam = function( url, param ) {
     "use strict";
-    var results = new RegExp( "[\?&]" + param + "=([^&#]*)" ).exec( url ) ;
-    return results[1] || 0;
+    var results = new RegExp( "[\?&]" + param + "=([^&#]*)" ).exec( url );
+    return results[ 1 ] || 0;
 };
 
 // Hash to test.
@@ -79,7 +79,7 @@ QUnit.test( "Tests with customs options values", function( assert ) {
     );
     assert.equal(
         $url,
-        "https://secure.gravatar.com/" + $hash,
+        "https://secure.gravatar.com/avatar/" + $hash,
         "Test the image attribute src url."
     );
     assert.equal(

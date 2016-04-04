@@ -31,7 +31,7 @@ module.exports = (grunt) ->
       input: 'src/jquery.async-gravatar.js'
 
     # Banner
-    banner: '/*! <%= pkg.title %> v<%= pkg.version %> | (c) 2015 <%= pkg.author.name %>. | MIT license */\n'
+    banner: '/*! <%= pkg.title %> v<%= pkg.version %> | (c) 2015-2016 <%= pkg.author.name %>. | MIT license */\n'
 
 
 
