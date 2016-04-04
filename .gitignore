@@ -8,9 +8,6 @@ bower_components
 .bower-registry
 .bower-tmp
 
-### NetBeans ###
-nbproject/private/
-
 ### Node ###
 # Logs
 logs
