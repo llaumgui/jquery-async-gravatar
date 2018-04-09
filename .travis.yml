@@ -1,6 +1,10 @@
 language: node_js
 node_js:
-  - '0.12'
+  - '8'
+
+cache:
+  directories:
+    - "node_modules"
 
 before_install: npm install -g grunt-cli codeclimate-test-reporter
 

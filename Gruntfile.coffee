@@ -4,11 +4,11 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-compress'
   grunt.loadNpmTasks 'grunt-contrib-jshint'
+  grunt.loadNpmTasks 'grunt-contrib-qunit'
   grunt.loadNpmTasks 'grunt-jscs'
   grunt.loadNpmTasks 'grunt-travis-lint'
   grunt.loadNpmTasks 'grunt-jsonlint'
   grunt.loadNpmTasks 'grunt-coffeelint'
-  grunt.loadNpmTasks 'grunt-qunit-istanbul'
 
 
 
@@ -127,7 +127,7 @@ module.exports = (grunt) ->
 
 
 # ============================== Callable tasks ============================== #
-  grunt.registerTask 'travis', [
+  grunt.registerTask 'test', [
     'lint'
     'unit_tests'
   ]

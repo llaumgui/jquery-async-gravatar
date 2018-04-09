@@ -39,14 +39,12 @@
     "grunt-travis-lint": "latest",
     "grunt-jsonlint": "latest",
     "grunt-coffeelint": "latest",
-    "grunt-qunit-istanbul": "latest",
+    "grunt-contrib-qunit": "latest",
     "jquery": "^3",
     "qunit": "^2.6"
   },
   "scripts": {
-    "test": "grunt travis --verbose"
-  },
-  "scripts": {
+    "test": "grunt test --verbose",
     "unit_tests": "grunt unit_tests --verbose"
   }
 }
