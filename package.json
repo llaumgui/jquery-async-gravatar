@@ -40,10 +40,13 @@
     "grunt-jsonlint": "latest",
     "grunt-coffeelint": "latest",
     "grunt-qunit-istanbul": "latest",
-    "jquery": "^1.12",
-    "qunitjs": "^1.18"
+    "jquery": "^3",
+    "qunit": "^2.6"
   },
   "scripts": {
     "test": "grunt travis --verbose"
+  },
+  "scripts": {
+    "unit_tests": "grunt unit_tests --verbose"
   }
 }
