@@ -46,8 +46,6 @@
     "grunt-travis-lint": "latest",
     "grunt-jsonlint": "latest",
     "grunt-coffeelint": "latest",
-    "grunt-mdlint": "latest",
-
     "grunt-qunit-istanbul": "latest",
 
     "jquery": "^1.12",

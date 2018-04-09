@@ -8,7 +8,6 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-travis-lint'
   grunt.loadNpmTasks 'grunt-jsonlint'
   grunt.loadNpmTasks 'grunt-coffeelint'
-  grunt.loadNpmTasks 'grunt-mdlint'
   grunt.loadNpmTasks 'grunt-qunit-istanbul'
 
 
@@ -111,12 +110,6 @@ module.exports = (grunt) ->
       options:
         configFile: '.coffeelintrc'
 
-    # MarkDown
-    mdlint:
-      default: [
-        '*.md'
-      ]
-
 
     # Unit tests
     # ----------
@@ -143,7 +136,6 @@ module.exports = (grunt) ->
     'jsonlint'
     'travis-lint'
     'coffeelint'
-    'mdlint'
     'jscs'
     'jshint'
   ]
