@@ -1,0 +1,6 @@
+{
+  "extends": "jquery",
+  "rules": {
+    "max-len": ["error", 200]
+  }
+}

@@ -1,4 +1,4 @@
-/*global QUnit*/
+/*global $,QUnit*/
 
 /**
  * Function to get URL parameters.
@@ -103,7 +103,8 @@ QUnit.test( "Tests with data attributes", function( assert ) {
     "use strict";
 
     // Create img object.
-    var fixture = $( "<img id=\"test-3\" alt=\"Gravatar\" src=\"./default.jpg\" data-gravatar_hash=\"" + $hash + "\" data-gravatar_size=\"50\"data-gravatar_default=\"404\" data-gravatar_rating=\"x\" />" );
+    var fixture = $( "<img id=\"test-3\" alt=\"Gravatar\" src=\"./default.jpg\" data-gravatar_hash=\"" +
+                    $hash + "\" data-gravatar_size=\"50\"data-gravatar_default=\"404\" data-gravatar_rating=\"x\" />" );
     fixture.append( "#qunit-fixture" );
 
     // Run asyncGravatar.

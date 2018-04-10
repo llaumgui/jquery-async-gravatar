@@ -3,9 +3,8 @@ module.exports = (grunt) ->
 # =============================== Load plugins =============================== #
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-compress'
-  grunt.loadNpmTasks 'grunt-contrib-jshint'
   grunt.loadNpmTasks 'grunt-contrib-qunit'
-  grunt.loadNpmTasks 'grunt-jscs'
+  grunt.loadNpmTasks 'grunt-eslint'
   grunt.loadNpmTasks 'grunt-travis-lint'
   grunt.loadNpmTasks 'grunt-jsonlint'
   grunt.loadNpmTasks 'grunt-coffeelint'
@@ -73,24 +72,13 @@ module.exports = (grunt) ->
     # ------
 
     # JS
-    jshint:
-      default:
-        options:
-          jshintrc: true
-        files:
-          src: [
-            '<%= src.input %>'
-            "test/*.js"
-          ]
-
-    # JS Code Sniffer
-    jscs:
-      src: [
+    eslint:
+      options:
+        configFile: '.eslintrc',
+      target: [
         '<%= src.input %>'
         "test/*.js"
       ]
-      options:
-        config: ".jscsrc"
 
     # JSON
     jsonlint:
@@ -98,8 +86,7 @@ module.exports = (grunt) ->
         src: [
           "*.json"
           ".coffeelintrc"
-          ".jscsrc"
-          ".jshintrc"
+          ".eslintrc"
         ]
 
     # Coffee
@@ -136,8 +123,7 @@ module.exports = (grunt) ->
     'jsonlint'
     'travis-lint'
     'coffeelint'
-    'jscs'
-    'jshint'
+    'eslint'
   ]
 
   grunt.registerTask 'unit_tests', [

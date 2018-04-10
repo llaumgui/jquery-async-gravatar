@@ -36,12 +36,12 @@
     "grunt": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-compress": "latest",
-    "grunt-contrib-jshint": "latest",
-    "grunt-jscs": "latest",
+    "grunt-contrib-qunit": "latest",
+    "grunt-eslint": "latest",
+    "eslint-config-jquery": "latest",
     "grunt-travis-lint": "latest",
     "grunt-jsonlint": "latest",
     "grunt-coffeelint": "latest",
-    "grunt-contrib-qunit": "latest",
     "qunit": "^2.6"
   },
   "scripts": {

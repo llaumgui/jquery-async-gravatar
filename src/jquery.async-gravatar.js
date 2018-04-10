@@ -6,6 +6,7 @@
  * Released under the MIT license
  * https://raw.githubusercontent.com/llaumgui/jquery-async-gravatar/master/LICENSE.txt
  */
+/*global jQuery,document*/
 ( function( $ ) {
     "use strict";
 
@@ -37,6 +38,7 @@
     };
 
     $.extend( $.gravatar, {
+
         /**
          * Init
          */
@@ -83,14 +85,14 @@
                     // Allow to override with data attributs ("data-").
                     size = ( $( this ).attr( $.gravatar.options.attr.size ) ? $( this ).attr( $.gravatar.options.attr.size ) : $.gravatar.options.size ),
                     rating = ( $( this ).attr( $.gravatar.options.attr.rating ) ? $( this ).attr( $.gravatar.options.attr.rating ) : $.gravatar.options.rating ),
-                    default_img = ( $( this ).attr( $.gravatar.options.attr.default ) ? $( this ).attr( $.gravatar.options.attr.default ) : $.gravatar.options.default_img ),
+                    defaultImg = ( $( this ).attr( $.gravatar.options.attr.default ) ? $( this ).attr( $.gravatar.options.attr.default ) : $.gravatar.options.default_img ),
                     src = $.gravatar.url + "/avatar/" + encodeURIComponent( hash ) +
                     "?s=" + encodeURIComponent( size ) +
                     "&r=" + encodeURIComponent( rating ) +
-                    "&d=" + encodeURIComponent( default_img );
+                    "&d=" + encodeURIComponent( defaultImg );
 
                 $( this ).attr( "src", src );
             }
         } );
     };
-}( jQuery ) );
+} )( jQuery );
