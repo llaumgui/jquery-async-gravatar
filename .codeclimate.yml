@@ -1,2 +1,28 @@
-languages:
-  JavaScript: true
+plugins:
+  eslint:
+    enabled: true
+    config: .eslintrc
+
+
+  coffeelint:
+    enabled: true
+    config: .coffeelintrc
+
+  editorconfig:
+    enabled: true
+    channel: beta
+    config:
+      editorconfig: .editorconfig
+
+  fixme:
+    enabled: true
+    config:
+      strings:
+      - FIXME
+      - BUG
+
+  markdownlint:
+    enabled: true
+    
+  nodesecurity:
+    enabled: true
