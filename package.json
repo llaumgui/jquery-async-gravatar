@@ -29,7 +29,9 @@
     "url": "https://github.com/llaumgui/jquery-async-gravatar/issues"
   },
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3"
+  },
   "devDependencies": {
     "grunt": "latest",
     "grunt-contrib-uglify": "latest",
@@ -40,7 +42,6 @@
     "grunt-jsonlint": "latest",
     "grunt-coffeelint": "latest",
     "grunt-contrib-qunit": "latest",
-    "jquery": "^3",
     "qunit": "^2.6"
   },
   "scripts": {
