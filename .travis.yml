@@ -10,5 +10,5 @@ before_install: npm install -g grunt-cli codeclimate-test-reporter
 
 sudo: false
 
-after_script:
-  - codeclimate < build/lcov.info
+#after_script:
+#  - codeclimate < build/lcov.info

@@ -46,6 +46,6 @@
   },
   "scripts": {
     "test": "grunt test --verbose",
-    "unit_tests": "grunt unit_tests --verbose"
+    "unit_test": "grunt unit_test --verbose"
   }
 }

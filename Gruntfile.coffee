@@ -116,7 +116,7 @@ module.exports = (grunt) ->
 # ============================== Callable tasks ============================== #
   grunt.registerTask 'test', [
     'lint'
-    'unit_tests'
+    'unit_test'
   ]
 
   grunt.registerTask 'lint', [
@@ -126,13 +126,13 @@ module.exports = (grunt) ->
     'eslint'
   ]
 
-  grunt.registerTask 'unit_tests', [
+  grunt.registerTask 'unit_test', [
     'qunit'
   ]
 
   grunt.registerTask 'build', [
     'lint'
-    'unit_tests'
+    'unit_test'
     'uglify'
   ]
 
