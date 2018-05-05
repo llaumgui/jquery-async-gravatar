@@ -9,7 +9,9 @@ An asynchronous loading method for Gravatar images.
 
 ### With NPM
 
-Next...
+~~~
+npm i jquery-async-gravatar
+~~~
 
 ### With Bower
 
