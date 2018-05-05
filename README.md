@@ -1,6 +1,6 @@
 # jQuery async Gravatar
 
-[![Bower version](https://badge.fury.io/bo/jquery-async-gravatar.svg)](https://libraries.io/bower/jquery-async-gravatar) [![Build Status branch master](https://travis-ci.org/llaumgui/jquery-async-gravatar.svg?branch=master)](https://travis-ci.org/llaumgui/jquery-async-gravatar) [![dependencies Status](https://david-dm.org/llaumgui/jquery-async-gravatar/status.svg)](https://david-dm.org/llaumgui/jquery-async-gravatar) [![devDependency Status](https://david-dm.org/llaumgui/jquery-async-gravatar/dev-status.png)](https://david-dm.org/llaumgui/jquery-async-gravatar#info=devDependencies)
+[![Build Status branch master](https://travis-ci.org/llaumgui/jquery-async-gravatar.svg?branch=master)](https://travis-ci.org/llaumgui/jquery-async-gravatar) [![dependencies Status](https://david-dm.org/llaumgui/jquery-async-gravatar/status.svg)](https://david-dm.org/llaumgui/jquery-async-gravatar) [![devDependency Status](https://david-dm.org/llaumgui/jquery-async-gravatar/dev-status.png)](https://david-dm.org/llaumgui/jquery-async-gravatar#info=devDependencies)
 [![Code Climate](https://codeclimate.com/github/llaumgui/jquery-async-gravatar/badges/gpa.svg)](https://codeclimate.com/github/llaumgui/jquery-async-gravatar) [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/llaumgui/jquery-async-gravatar.svg)](http://isitmaintained.com/project/llaumgui/jquery-async-gravatar "Average time to resolve an issue") [![Percentage of issues still open](http://isitmaintained.com/badge/open/llaumgui/jquery-async-gravatar.svg)](http://isitmaintained.com/project/llaumgui/jquery-async-gravatar "Percentage of issues still open") [![Inline docs](http://inch-ci.org/github/llaumgui/jquery-async-gravatar.svg?branch=master)](http://inch-ci.org/github/llaumgui/jquery-async-gravatar)
 
 An asynchronous loading method for Gravatar images.
@@ -11,24 +11,6 @@ An asynchronous loading method for Gravatar images.
 
 ~~~
 npm i jquery-async-gravatar
-~~~
-
-### With Bower
-
-Use [Bower](http://bower.io) client:
-
-~~~
-bower install jquery-async-gravatar
-~~~
-
-Or, add `jquery-async-gravatar` to your app's `bower.json`.
-
-~~~json
-  ...
-    "dependencies": {
-      "jquery-async-gravatar": "latest"
-    },
-  ...
 ~~~
 
 ### Standalone
