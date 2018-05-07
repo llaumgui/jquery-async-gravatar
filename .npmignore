@@ -1,0 +1,8 @@
+build
+test
+.codeclimate.yml
+.coffeelintrc
+.editorconfig
+.eslintrc
+.travis.yml
+Gruntfile.coffee

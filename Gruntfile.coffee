@@ -4,6 +4,8 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-compress'
   grunt.loadNpmTasks 'grunt-contrib-qunit'
+  grunt.loadNpmTasks 'grunt-contrib-copy'
+  grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-eslint'
   grunt.loadNpmTasks 'grunt-travis-lint'
   grunt.loadNpmTasks 'grunt-jsonlint'
@@ -25,11 +27,11 @@ module.exports = (grunt) ->
 
     # Sources configuration
     src:
-      output: 'src/jquery.async-gravatar.min.js'
+      output: 'dist/jquery.async-gravatar.min.js'
       input: 'src/jquery.async-gravatar.js'
 
     # Banner
-    banner: '/*! <%= pkg.title %> v<%= pkg.version %> | (c) 2015-2016 <%= pkg.author.name %>. | MIT license */\n'
+    banner: '/*! <%= pkg.title %> v<%= pkg.version %> | (c) 2015-2018 <%= pkg.author.name %>. | MIT license */\n'
 
 
 
@@ -37,6 +39,20 @@ module.exports = (grunt) ->
 
     # Packaging
     # ---------
+
+    # Clean
+    clean:
+      dist: ['dist']
+      build: ['build', '*.tgz']
+    # Copy
+    copy:
+      default:
+        expand: true
+        #cwd: 'src/'
+        filter: 'isFile'
+        flatten: true
+        src: '<%= src.input %>'
+        dest: 'dist/'
 
     # Uglify
     uglify:
@@ -49,7 +65,7 @@ module.exports = (grunt) ->
 
     # Compress
     compress:
-      main:
+      default:
         options:
           archive: "build/<%= pkg.name %>-v<%= pkg.version %>.tar.gz"
         files : [
@@ -131,13 +147,14 @@ module.exports = (grunt) ->
   ]
 
   grunt.registerTask 'build', [
-    'lint'
-    'unit_test'
+    'test'
     'uglify'
   ]
 
   grunt.registerTask 'release', [
+    'clean'
     'build'
+    'copy'
     'compress'
   ]
 
