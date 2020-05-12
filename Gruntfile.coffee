@@ -7,7 +7,6 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-eslint'
-  grunt.loadNpmTasks 'grunt-travis-lint'
   grunt.loadNpmTasks 'grunt-jsonlint'
   grunt.loadNpmTasks 'grunt-coffeelint'
 
@@ -137,7 +136,6 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'lint', [
     'jsonlint'
-    'travis-lint'
     'coffeelint'
     'eslint'
   ]
