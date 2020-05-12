@@ -145,7 +145,6 @@ module.exports = (grunt) ->
   ]
 
   grunt.registerTask 'build', [
-    'test'
     'uglify'
   ]
 

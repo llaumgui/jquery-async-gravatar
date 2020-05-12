@@ -19,16 +19,32 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Install Grunt cli
+    - name: Install globally grunt-cli
       run: npm install -g grunt-cli
       
     - name: Install other dependencies
       run: npm install
+
+    - name: Build .min.js file
+      run: npm run build
     
-    - name: Run tests
+    - name: Run tests (QA and unit tests)
       run: npm test
-      env:
-        CI: true
 
-    - run: npm run build --if-present
+    - name: Archive artifacts
+      if: matrix.node-version == '12.x'
+      uses: actions/upload-artifact@v2
+      with:
+        name: jquery.async-gravatar-${{ github.sha }}.min.js
+        path: dist/*.min.js
+      
+    - name: Package
+      if: matrix.node-version == '12.x' && github.ref == 'refs/heads/master'
+      run: npm run release
 
+    - name: Archive package
+      if: matrix.node-version == '12.x' && github.ref == 'refs/heads/master'
+      uses: actions/upload-artifact@v2
+      with:
+        name: jquery-async-gravatar-${{ github.sha }}.tar.gz
+        path: build/*.tar.gz

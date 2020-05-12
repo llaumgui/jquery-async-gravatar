@@ -46,7 +46,7 @@
     "qunit": "^2.10.0"
   },
   "scripts": {
-    "build": "npm install && grunt build",
+    "build": "grunt build",
     "test": "grunt test --verbose",
     "test:unit": "grunt unit_test --verbose",
     "release": "grunt release --verbose && npm pack"
