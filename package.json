@@ -39,10 +39,13 @@
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-compress": "^1.6.0",
     "grunt-contrib-copy": "latest",
-    "grunt-contrib-qunit": "^3.1.0",
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-eslint": "^22.0.0",
     "grunt-jsonlint": "^2.1.2",
+    "grunt-karma": "^4.0.0",
+    "karma": "^5.0.5",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-qunit": "^4.1.1",
     "qunit": "^2.10.0"
   },
   "scripts": {

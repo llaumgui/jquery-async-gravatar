@@ -3,12 +3,12 @@ module.exports = (grunt) ->
 # =============================== Load plugins =============================== #
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-compress'
-  grunt.loadNpmTasks 'grunt-contrib-qunit'
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-eslint'
   grunt.loadNpmTasks 'grunt-jsonlint'
   grunt.loadNpmTasks 'grunt-coffeelint'
+  grunt.loadNpmTasks 'grunt-karma'
 
 
 
@@ -115,16 +115,9 @@ module.exports = (grunt) ->
 
     # Unit tests
     # ----------
-    qunit:
-      options:
-        timeout: 30000,
-        "--web-security": "no",
-        coverage:
-          src: '<%= src.input %>'
-          instrumentedFiles: "temp/"
-          lcovReport: "build"
-          linesThresholdPct: 70
-      all: ['test/*.html']
+    karma:
+      unit:
+        configFile: 'karma.conf.js'
 
 
 
@@ -141,7 +134,7 @@ module.exports = (grunt) ->
   ]
 
   grunt.registerTask 'unit_test', [
-    'qunit'
+    'karma'
   ]
 
   grunt.registerTask 'build', [
