@@ -44,6 +44,7 @@
     "grunt-jsonlint": "^2.1.2",
     "grunt-karma": "^4.0.0",
     "karma": "^5.0.5",
+    "karma-coverage": "^2.0.2",
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-qunit": "^4.1.1",
     "qunit": "^2.10.0"
