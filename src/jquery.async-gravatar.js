@@ -2,7 +2,7 @@
  * jQuery async Gravatar
  * https://github.com/llaumgui/jquery-async-gravatar
  *
- * Copyright 2015-2018 Guillaume Kulakowski and other contributors
+ * Copyright 2015-2020 Guillaume Kulakowski and other contributors
  * Released under the MIT license
  * https://raw.githubusercontent.com/llaumgui/jquery-async-gravatar/master/LICENSE.txt
  */
