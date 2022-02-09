@@ -1,8 +1,16 @@
 # jQuery async Gravatar
 
-[![Node.js CI](https://github.com/llaumgui/jquery-async-gravatar/workflows/Node.js%20CI/badge.svg?branch=master)](https://github.com/llaumgui/jquery-async-gravatar/actions?query=workflow%3A%22Node.js+CI%22) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?branch=master&project=llaumgui-github%3Ajquery-async-gravatar&metric=alert_status)](https://sonarcloud.io/dashboard?id=llaumgui-github%3Ajquery-async-gravatar&branch=master) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=llaumgui-github%3Ajquery-async-gravatar&metric=coverage)](https://sonarcloud.io/dashboard?id=llaumgui-github%3Ajquery-async-gravatar) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=llaumgui-github%3Ajquery-async-gravatar&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=llaumgui-github%3Ajquery-async-gravatar) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=llaumgui-github%3Ajquery-async-gravatar&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=llaumgui-github%3Ajquery-async-gravatar) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=llaumgui-github%3Ajquery-async-gravatar&metric=security_rating)](https://sonarcloud.io/dashboard?id=llaumgui-github%3Ajquery-async-gravatar)<br />
-[![GitHub license](https://img.shields.io/github/license/llaumgui/jquery-async-gravatar.svg)](https://github.com/llaumgui/jquery-async-gravatar/blob/master/LICENSE.txt) [![npm version](https://badge.fury.io/js/jquery-async-gravatar.svg)](https://www.npmjs.com/package/jquery-async-gravatar) [![dependencies Status](https://david-dm.org/llaumgui/jquery-async-gravatar/status.svg)](https://david-dm.org/llaumgui/jquery-async-gravatar) [![devDependency Status](https://david-dm.org/llaumgui/jquery-async-gravatar/dev-status.png)](https://david-dm.org/llaumgui/jquery-async-gravatar#info=devDependencies)<br />
-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/llaumgui/jquery-async-gravatar.svg)](http://isitmaintained.com/project/llaumgui/jquery-async-gravatar "Average time to resolve an issue") [![Percentage of issues still open](http://isitmaintained.com/badge/open/llaumgui/jquery-async-gravatar.svg)](http://isitmaintained.com/project/llaumgui/jquery-async-gravatar "Percentage of issues still open") [![Inline docs](http://inch-ci.org/github/llaumgui/jquery-async-gravatar.svg?branch=master)](http://inch-ci.org/github/llaumgui/jquery-async-gravatar)
+[![Author][ico-twitter]][link-twitter]
+[![Build Status][ico-ghactions]][link-ghactions]
+[![Latest Version][ico-version]][link-npm]
+[![Libraries.io dependency status for latest release][ico-dependencies]](package.json)
+[![Software License][ico-license]](LICENSE.txt)
+
+[![Quality Gate Status][ico-sonarcloud-gate]][link-sonarcloud-gate]
+[![Coverage][ico-sonarcloud-coverage]][link-sonarcloud-coverage]
+[![Maintainability Rating][ico-sonarcloud-maintainability]][link-sonarcloud-maintainability]
+[![Reliability Rating][ico-sonarcloud-reliability]][link-sonarcloud-reliability]
+[![Security Rating][ico-sonarcloud-security]][link-sonarcloud-security]
 
 An asynchronous loading method for Gravatar images.
 
@@ -78,3 +86,22 @@ You can also use [data attributes](https://developer.mozilla.org/en-US/docs/Web/
 ## License
 
 Released under the [MIT license](http://www.opensource.org/licenses/MIT).
+
+[ico-twitter]: https://img.shields.io/static/v1?label=Author&message=llaumgui&color=50ABF1&logo=twitter&style=flat-square
+[link-twitter]: https://twitter.com/llaumgui
+[ico-ghactions]: https://img.shields.io/github/workflow/status/llaumgui/jquery-async-gravatar/Tests?style=flat-square&logo=github&label=Tests
+[link-ghactions]: https://github.com/llaumgui/jquery-async-gravatar/actions
+[ico-version]: https://img.shields.io/npm/v/jquery-async-gravatar?include_prereleases&label=Package%20version&style=flat-square&logo=npm
+[link-npm]: https://www.npmjs.com/package/jquery-async-gravatar
+[ico-license]: https://img.shields.io/github/license/llaumgui/jquery-async-gravatar?style=flat-square
+[ico-sonarcloud-gate]: https://sonarcloud.io/api/project_badges/measure?branch=main&project=llaumgui-github%3Ajquery-async-gravatar&metric=alert_status
+[link-sonarcloud-gate]: https://sonarcloud.io/dashboard?id=llaumgui-github%3Ajquery-async-gravatar&branch=main
+[ico-sonarcloud-coverage]: https://sonarcloud.io/api/project_badges/measure?project=llaumgui-github%3Ajquery-async-gravatar&metric=coverage
+[link-sonarcloud-coverage]: https://sonarcloud.io/dashboard?id=llaumgui-github%3Ajquery-async-gravatar
+[ico-sonarcloud-maintainability]: https://sonarcloud.io/api/project_badges/measure?project=llaumgui-github%3Ajquery-async-gravatar&metric=sqale_rating
+[link-sonarcloud-maintainability]: https://sonarcloud.io/dashboard?id=llaumgui-github%3Ajquery-async-gravatar
+[ico-sonarcloud-reliability]: https://sonarcloud.io/api/project_badges/measure?project=llaumgui-github%3Ajquery-async-gravatar&metric=reliability_rating
+[link-sonarcloud-reliability]: https://sonarcloud.io/dashboard?id=llaumgui-github%3Ajquery-async-gravatar
+[ico-sonarcloud-security]: https://sonarcloud.io/api/project_badges/measure?project=llaumgui-github%3Ajquery-async-gravatar&metric=security_rating
+[link-sonarcloud-security]: https://sonarcloud.io/dashboard?id=llaumgui-github%3Ajquery-async-gravatar
+[ico-dependencies]: https://img.shields.io/librariesio/release/npm/jquery-async-gravatar?style=flat-square
