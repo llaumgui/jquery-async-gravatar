@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.X]
+        node-version: [12.x, 14.X, 16.x, 17.X]
 
     steps:
       - name: Git checkout
@@ -33,7 +33,7 @@ jobs:
         run: npm test
 
       - name: SonarCloud Scan
-        if: matrix.node-version == '14.x'
+        if: matrix.node-version == '16.x'
         uses: sonarsource/sonarcloud-github-action@master
         with:
           # Disabling shallow clone is recommended for improving relevancy of reporting
@@ -43,18 +43,18 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Archive artifacts
-        if: matrix.node-version == '14.x'
+        if: matrix.node-version == '16.x'
         uses: actions/upload-artifact@v2
         with:
           name: jquery.async-gravatar-${{ github.sha }}.min.js
           path: dist/*.min.js
 
       - name: Package
-        if: matrix.node-version == '14.x' && (github.ref == 'refs/heads/master' || contains(github.ref, 'refs/tags/v'))
+        if: matrix.node-version == '16.x' && (github.ref == 'refs/heads/master' || contains(github.ref, 'refs/tags/v'))
         run: npm run release
 
       - name: Archive package
-        if: matrix.node-version == '14.x' && (github.ref == 'refs/heads/master' || contains(github.ref, 'refs/tags/v'))
+        if: matrix.node-version == '16.x' && (github.ref == 'refs/heads/master' || contains(github.ref, 'refs/tags/v'))
         uses: actions/upload-artifact@v2
         with:
           name: jquery-async-gravatar-${{ github.sha }}.tar.gz
@@ -73,10 +73,10 @@ jobs:
       - name: Set env
         run: echo ::set-env name=RELEASE_VERSION::${GITHUB_REF:10}
 
-      - name: Use Node.js 14.x
+      - name: Use Node.js 16.x
         uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
+          node-version: '16.x'
 
       - name: Install globally grunt-cli
         run: npm install -g grunt-cli
