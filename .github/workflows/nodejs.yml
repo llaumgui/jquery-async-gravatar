@@ -1,4 +1,4 @@
-name: Node.js CI/CD
+name: Tests
 
 on:
   [push, pull_request]
