@@ -33,7 +33,7 @@ jobs:
         run: npm test
 
       - name: SonarCloud Scan
-        if: matrix.node-version == '16.x'
+        if: (matrix.node-version == '16.x') && (github.event_name != 'pull_request')
         uses: sonarsource/sonarcloud-github-action@master
         with:
           # Disabling shallow clone is recommended for improving relevancy of reporting
