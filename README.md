@@ -89,7 +89,7 @@ Released under the [MIT license](http://www.opensource.org/licenses/MIT).
 
 [ico-twitter]: https://img.shields.io/static/v1?label=Author&message=llaumgui&color=50ABF1&logo=twitter&style=flat-square
 [link-twitter]: https://twitter.com/llaumgui
-[ico-ghactions]: https://img.shields.io/github/workflow/status/llaumgui/jquery-async-gravatar/Tests?style=flat-square&logo=github&label=Tests
+[ico-ghactions]: https://img.shields.io/github/workflow/status/llaumgui/jquery-async-gravatar/Tests?style=flat-square&logo=github&label=DevOps
 [link-ghactions]: https://github.com/llaumgui/jquery-async-gravatar/actions
 [ico-version]: https://img.shields.io/npm/v/jquery-async-gravatar?include_prereleases&label=Package%20version&style=flat-square&logo=npm
 [link-npm]: https://www.npmjs.com/package/jquery-async-gravatar

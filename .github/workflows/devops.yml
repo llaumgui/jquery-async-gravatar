@@ -1,4 +1,4 @@
-name: Tests
+name: DevOps
 
 on:
   [push, pull_request]
@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.X, 16.x, 17.X]
+        node-version: [14.X, 16.x, 18.X]
 
     steps:
       - name: Git checkout
