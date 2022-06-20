@@ -44,7 +44,7 @@ jobs:
 
       - name: Archive artifacts
         if: matrix.node-version == '16.x'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: jquery.async-gravatar-${{ github.sha }}.min.js
           path: dist/*.min.js
@@ -55,7 +55,7 @@ jobs:
 
       - name: Archive package
         if: matrix.node-version == '16.x' && (github.ref == 'refs/heads/main' || contains(github.ref, 'refs/tags/v'))
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: jquery-async-gravatar-${{ github.sha }}.tar.gz
           path: build/*.tar.gz
