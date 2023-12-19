@@ -103,6 +103,6 @@ jobs:
           asset_name: jquery-async-gravatar-${{ env.RELEASE_VERSION }}.tar.gz
           asset_content_type: application/tar+gzip
       - name: Create NPM release
-        uses: JS-DevTools/npm-publish@v1
+        uses: JS-DevTools/npm-publish@v2
         with:
           token: ${{ secrets.NPM_TOKEN }}
