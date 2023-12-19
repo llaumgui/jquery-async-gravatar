@@ -1,10 +1,9 @@
 # jQuery async Gravatar
 
 [![Author][ico-twitter]][link-twitter]
+[![Software License][ico-license]](LICENSE.txt)
 [![Build Status][ico-ghactions]][link-ghactions]
 [![Latest Version][ico-version]][link-npm]
-[![Libraries.io dependency status for latest release][ico-dependencies]](package.json)
-[![Software License][ico-license]](LICENSE.txt)
 
 [![Quality Gate Status][ico-sonarcloud-gate]][link-sonarcloud-gate]
 [![Coverage][ico-sonarcloud-coverage]][link-sonarcloud-coverage]
@@ -87,7 +86,7 @@ You can also use [data attributes](https://developer.mozilla.org/en-US/docs/Web/
 
 Released under the [MIT license](http://www.opensource.org/licenses/MIT).
 
-[ico-twitter]: https://img.shields.io/static/v1?label=Author&message=llaumgui&color=50ABF1&logo=twitter&style=flat-square
+[ico-twitter]: https://img.shields.io/static/v1?label=Author&message=llaumgui&color=000&logo=x&style=flat-square
 [link-twitter]: https://twitter.com/llaumgui
 [ico-ghactions]: https://img.shields.io/github/actions/workflow/status/llaumgui/jquery-async-gravatar/devops.yml?style=flat-square&logo=github&label=DevOps
 [link-ghactions]: https://github.com/llaumgui/jquery-async-gravatar/actions/workflows/devops.yml
@@ -104,4 +103,3 @@ Released under the [MIT license](http://www.opensource.org/licenses/MIT).
 [link-sonarcloud-reliability]: https://sonarcloud.io/dashboard?id=llaumgui-github%3Ajquery-async-gravatar
 [ico-sonarcloud-security]: https://sonarcloud.io/api/project_badges/measure?project=llaumgui-github%3Ajquery-async-gravatar&metric=security_rating
 [link-sonarcloud-security]: https://sonarcloud.io/dashboard?id=llaumgui-github%3Ajquery-async-gravatar
-[ico-dependencies]: https://img.shields.io/librariesio/release/npm/jquery-async-gravatar?style=flat-square
