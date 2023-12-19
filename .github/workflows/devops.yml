@@ -1,92 +1,83 @@
 name: DevOps
-
 on:
   [push, pull_request]
+
+env:
+  nodeLastVersion: '20.X'
+
 jobs:
+
+  ##############################################################################
+  # Build application
+  #
   build:
     runs-on: ubuntu-latest
     name: Build and test
-
     strategy:
       matrix:
-        node-version: [14.X, 16.x, 18.X]
-
+        node-version: [18.X, 20.X, 21.X]
     steps:
       - name: Git checkout
-        uses: actions/checkout@v3.1.0
-
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-
       - name: Install globally grunt-cli
         run: npm install -g grunt-cli
-
       - name: Install other dependencies
         run: npm install
-
       - name: Build .min.js file
         run: npm run build
-
       - name: Run tests (QA and unit tests)
         run: npm test
-
       - name: SonarCloud Scan
-        if: (matrix.node-version == '16.x') && (github.event_name != 'pull_request')
+        if: (matrix.node-version == "${{ env.nodeLastVersion }}") && (github.event_name != 'pull_request')
         uses: sonarsource/sonarcloud-github-action@master
-        with:
-          # Disabling shallow clone is recommended for improving relevancy of reporting
-          fetch-depth: 0
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
       - name: Archive artifacts
-        if: matrix.node-version == '16.x'
+        if: matrix.node-version == "${{ env.nodeLastVersion }}"
         uses: actions/upload-artifact@v3
         with:
           name: jquery.async-gravatar-${{ github.sha }}.min.js
           path: dist/*.min.js
-
       - name: Package
-        if: matrix.node-version == '16.x' && (github.ref == 'refs/heads/main' || contains(github.ref, 'refs/tags/v'))
+        if: matrix.node-version == "${{ env.nodeLastVersion }}" && (github.ref == 'refs/heads/main' || contains(github.ref, 'refs/tags/v'))
         run: npm run release
-
       - name: Archive package
-        if: matrix.node-version == '16.x' && (github.ref == 'refs/heads/main' || contains(github.ref, 'refs/tags/v'))
+        if: matrix.node-version == "${{ env.nodeLastVersion }}" && (github.ref == 'refs/heads/main' || contains(github.ref, 'refs/tags/v'))
         uses: actions/upload-artifact@v3
         with:
           name: jquery-async-gravatar-${{ github.sha }}.tar.gz
           path: build/*.tar.gz
 
+  ##############################################################################
+  # Release application
+  #
   release:
     needs: build
     runs-on: ubuntu-latest
     if: contains(github.ref, 'refs/tags/v')
     name: Release on GitHub and NPM
-
     steps:
       - name: Git checkout
-        uses: actions/checkout@v3.1.0
-
+        uses: actions/checkout@v4
       - name: Set env
         run: echo "RELEASE_VERSION=${GITHUB_REF:10}" >> $GITHUB_ENV
-
-      - name: Use Node.js 16.x
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
-
+          node-version: ${{ matrix.node-version }}
       - name: Install globally grunt-cli
         run: npm install -g grunt-cli
-
       - name: Install other dependencies
         run: npm install
-
       - name: Package
         run: npm run release
-
       - name: Create GitHub release
         id: create_release
         uses: actions/create-release@v1
@@ -101,7 +92,6 @@ jobs:
             - Second Change
           draft: true
           prerelease: false
-
       - name: Upload asset in GitHub release
         id: upload-release-asset
         uses: actions/upload-release-asset@v1
@@ -112,7 +102,6 @@ jobs:
           asset_path: build/jquery-async-gravatar-${{ env.RELEASE_VERSION }}.tar.gz
           asset_name: jquery-async-gravatar-${{ env.RELEASE_VERSION }}.tar.gz
           asset_content_type: application/tar+gzip
-
       - name: Create NPM release
         uses: JS-DevTools/npm-publish@v1
         with:
