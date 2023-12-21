@@ -8,9 +8,9 @@ env:
 jobs:
 
   ##############################################################################
-  # Build application
+  # Test application
   #
-  build:
+  test_nodejs:
     runs-on: ubuntu-latest
     name: Build and test
     strategy:
@@ -19,8 +19,6 @@ jobs:
     steps:
       - name: Git checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
@@ -29,27 +27,80 @@ jobs:
         run: npm install -g grunt-cli
       - name: Install other dependencies
         run: npm install
-      - name: Build .min.js file
-        run: npm run build
       - name: Run tests (QA and unit tests)
         run: npm test
-      - name: SonarCloud Scan
-        if: (matrix.node-version == "${{ env.nodeLastVersion }}") && (github.event_name != 'pull_request')
-        uses: sonarsource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+  ##############################################################################
+  # Markdownlint
+  #
+  test_markdownlint:
+    runs-on: ubuntu-latest
+    name: MarkdownLint
+    steps:
+    - name: Git checkout
+      uses: actions/checkout@v4
+    - name: markdownlint-cli
+      uses: nosborn/github-action-markdown-cli@v3.3.0
+      with:
+        files: "*.md"
+        config_file: ".markdownlint.yaml"
+
+  ##############################################################################
+  # SonarCloud job
+  #
+  test_sonar:
+    if: github.event_name != 'pull_request'
+    needs: [
+      test_nodejs,
+      test_markdownlint
+    ]
+    runs-on: ubuntu-latest
+    name: SonarCloud analyse
+    steps:
+    - name: Git checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+    - name: SonarCloud Scan
+      uses: sonarsource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      with:
+        args: >
+          -Dsonar.verbose=true
+
+  ##############################################################################
+  # Build application
+  #
+  build:
+    if: github.ref == 'refs/heads/main' || ${{ startsWith(github.ref, 'refs/tags/v') }}
+    needs: [
+      test_sonar
+    ]
+    runs-on: ubuntu-latest
+    name: Build and package
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v4
+      - name: Use Node.js ${{ env.nodeLastVersion }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.nodeLastVersion }}
+      - name: Install globally grunt-cli
+        run: npm install -g grunt-cli
+      - name: Install other dependencies
+        run: npm install
+      - name: Build .min.js file
+        run: npm run build
       - name: Archive artifacts
-        if: matrix.node-version == "${{ env.nodeLastVersion }}"
         uses: actions/upload-artifact@v3
         with:
           name: jquery.async-gravatar-${{ github.sha }}.min.js
           path: dist/*.min.js
       - name: Package
-        if: matrix.node-version == "${{ env.nodeLastVersion }}" && (github.ref == 'refs/heads/main' || contains(github.ref, 'refs/tags/v'))
         run: npm run release
       - name: Archive package
-        if: matrix.node-version == "${{ env.nodeLastVersion }}" && (github.ref == 'refs/heads/main' || contains(github.ref, 'refs/tags/v'))
         uses: actions/upload-artifact@v3
         with:
           name: jquery-async-gravatar-${{ github.sha }}.tar.gz
@@ -59,9 +110,9 @@ jobs:
   # Release application
   #
   release:
+    if: ${{ startsWith(github.ref, 'refs/tags/v') }}
     needs: build
     runs-on: ubuntu-latest
-    if: contains(github.ref, 'refs/tags/v')
     name: Release on GitHub and NPM
     steps:
       - name: Git checkout
@@ -106,3 +157,4 @@ jobs:
         uses: JS-DevTools/npm-publish@v2
         with:
           token: ${{ secrets.NPM_TOKEN }}
+

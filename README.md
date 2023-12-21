@@ -17,7 +17,7 @@ An asynchronous loading method for Gravatar images.
 
 ### With NPM
 
-~~~
+~~~bash
 npm i jquery-async-gravatar
 ~~~
 
