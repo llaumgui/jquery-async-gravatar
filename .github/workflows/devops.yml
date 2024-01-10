@@ -49,7 +49,7 @@ jobs:
   # SonarCloud job
   #
   test_sonar:
-    if: github.event_name != 'pull_request'
+    if: ${{ github.event_name != 'pull_request' }}
     needs: [
       test_nodejs,
       test_markdownlint
@@ -74,7 +74,7 @@ jobs:
   # Build application
   #
   build:
-    if: github.ref == 'refs/heads/main' || ${{ startsWith(github.ref, 'refs/tags/v') }}
+    if: ${{ github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v') }}
     needs: [
       test_sonar
     ]
