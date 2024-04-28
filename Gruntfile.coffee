@@ -88,8 +88,6 @@ module.exports = (grunt) ->
 
     # JS
     eslint:
-      options:
-        overrideConfigFile: '.eslintrc',
       target: [
         '<%= src.input %>'
         "test/*.js"
