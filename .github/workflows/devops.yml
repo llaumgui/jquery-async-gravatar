@@ -20,7 +20,7 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v5.0.0
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install globally grunt-cli
@@ -84,7 +84,7 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v5.0.0
       - name: Use Node.js ${{ env.nodeLastVersion }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ env.nodeLastVersion }}
       - name: Install globally grunt-cli
@@ -120,7 +120,7 @@ jobs:
       - name: Set env
         run: echo "RELEASE_VERSION=${GITHUB_REF:10}" >> $GITHUB_ENV
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install globally grunt-cli
