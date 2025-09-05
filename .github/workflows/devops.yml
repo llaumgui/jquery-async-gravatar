@@ -3,7 +3,7 @@ on:
   [push, pull_request]
 
 env:
-  nodeLastVersion: '20.X'
+  nodeLastVersion: '24.X'
 
 jobs:
 
@@ -15,7 +15,7 @@ jobs:
     name: Build and test
     strategy:
       matrix:
-        node-version: [18.X, 20.X, 21.X]
+        node-version: [20.X, 22.X, 24.X]
     steps:
       - name: Git checkout
         uses: actions/checkout@v5.0.0
@@ -29,6 +29,8 @@ jobs:
         run: npm install
       - name: Run tests (QA and unit tests)
         run: npm test
+        env:
+          OPENSSL_CONF: /dev/null
 
   ##############################################################################
   # Markdownlint
