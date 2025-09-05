@@ -1,6 +1,6 @@
 # jQuery async Gravatar
 
-[![Author][ico-twitter]][link-twitter]
+[![Author][ico-bluesky]][link-bluesky]
 [![Software License][ico-license]](LICENSE.txt)
 [![Build Status][ico-ghactions]][link-ghactions]
 [![Latest Version][ico-version]][link-npm]
@@ -86,8 +86,8 @@ You can also use [data attributes](https://developer.mozilla.org/en-US/docs/Web/
 
 Released under the [MIT license](http://www.opensource.org/licenses/MIT).
 
-[ico-twitter]: https://img.shields.io/static/v1?label=Author&message=llaumgui&color=000&logo=x&style=flat-square
-[link-twitter]: https://twitter.com/llaumgui
+[ico-bluesky]: https://img.shields.io/static/v1?label=Author&message=llaumgui&color=208bfe&logo=bluesky&style=flat-square
+[link-bluesky]: https://bsky.app/profile/llaumgui.kulakowski.fr
 [ico-ghactions]: https://img.shields.io/github/actions/workflow/status/llaumgui/jquery-async-gravatar/devops.yml?style=flat-square&logo=github&label=DevOps
 [link-ghactions]: https://github.com/llaumgui/jquery-async-gravatar/actions/workflows/devops.yml
 [ico-version]: https://img.shields.io/npm/v/jquery-async-gravatar?include_prereleases&label=Package%20version&style=flat-square&logo=npm
