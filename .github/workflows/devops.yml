@@ -18,7 +18,7 @@ jobs:
         node-version: [20.X, 22.X, 24.X]
     steps:
       - name: Git checkout
-        uses: actions/checkout@v5.0.0
+        uses: actions/checkout@v6.0.1
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v5
         with:
@@ -40,7 +40,7 @@ jobs:
     name: MarkdownLint
     steps:
     - name: Git checkout
-      uses: actions/checkout@v5.0.0
+      uses: actions/checkout@v6.0.1
     - name: markdownlint-cli
       uses: nosborn/github-action-markdown-cli@v3.5.0
       with:
@@ -60,7 +60,7 @@ jobs:
     name: SonarCloud analyse
     steps:
     - name: Git checkout
-      uses: actions/checkout@v5.0.0
+      uses: actions/checkout@v6.0.1
       with:
         fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
     - name: SonarQube Scan
@@ -84,7 +84,7 @@ jobs:
     name: Build and package
     steps:
       - name: Git checkout
-        uses: actions/checkout@v5.0.0
+        uses: actions/checkout@v6.0.1
       - name: Use Node.js ${{ env.nodeLastVersion }}
         uses: actions/setup-node@v5
         with:
@@ -118,7 +118,7 @@ jobs:
     name: Release on GitHub and NPM
     steps:
       - name: Git checkout
-        uses: actions/checkout@v5.0.0
+        uses: actions/checkout@v6.0.1
       - name: Set env
         run: echo "RELEASE_VERSION=${GITHUB_REF:10}" >> $GITHUB_ENV
       - name: Use Node.js ${{ matrix.node-version }}
