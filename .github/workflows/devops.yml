@@ -15,7 +15,7 @@ jobs:
     name: Build and test
     strategy:
       matrix:
-        node-version: [20.X, 22.X, 24.X]
+        node-version: [22.X, 24.X, 25.X]
     steps:
       - name: Git checkout
         uses: actions/checkout@v6.0.1
