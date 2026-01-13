@@ -96,14 +96,14 @@ jobs:
       - name: Build .min.js file
         run: npm run build
       - name: Archive artifacts
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: jquery.async-gravatar-${{ github.sha }}.min.js
           path: dist/*.min.js
       - name: Package
         run: npm run release
       - name: Archive package
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: jquery-async-gravatar-${{ github.sha }}.tar.gz
           path: build/*.tar.gz
